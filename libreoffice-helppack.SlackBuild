@@ -20,17 +20,17 @@
 #
 # Visit SlackPack at http://sotirov-bg.net/slackpack/
 #
-# $Id: libreoffice-helppack.SlackBuild,v 1.1 2011/03/21 23:23:48 gsotirov Exp $
+# $Id: libreoffice-helppack.SlackBuild,v 1.2 2011/11/26 17:51:22 gsotirov Exp $
 #
 
-. ../slack-package.conf
+. ../../slack-package.conf
 
 LIBO_NAME=libreoffice
 NAME=${LIBO_NAME}-helppack
 VERSION_MAJOR=3
 VERSION_MINOR=3
-VERSION_PATCH=1
-VERSION_RC='rc2'
+VERSION_PATCH=4
+VERSION_RC='rc1'
 VERSION=$VERSION_MAJOR.$VERSION_MINOR.$VERSION_PATCH
 BUILD=${BUILD:-1}
 LOCALE=${LOCALE:-'bg'}
@@ -38,7 +38,11 @@ LOCALE_FULL=${LOCALE_FULL:-'Bulgarian'}
 
 CWD=${CWD:-`pwd`}
 TMP=${TMP:-/tmp}
-ARCH=${ARCH_OO:-i686}
+ARCH=${ARCH:-i686}
+
+if [ "$ARCH" = "i386" -o "$ARCH" = "i486" -o "$ARCH" = "i686" ]; then
+  ARCH="i686"
+fi
 
 function unrpm() {
   rpm2cpio < $1 | cpio --extract --make-directories --unconditional --preserve-modification-time
@@ -63,10 +67,10 @@ if [ "$ARCH" == "i686" ]; then
   SRC_DIR="LibO_${VERSION}${VERSION_RC}_Linux_x86_helppack-rpm_${LOCALE}"
 elif [ "$ARCH" == "x86_64" ]; then
   PACK_NAME="LibO_${VERSION}_Linux_x86-64_helppack-rpm_${LOCALE}"
-  SRC_DIR="LibO_${VERSION_MAJOR}${VERSION_RC}_Linux_x86_64_helppack-rpm_${LOCALE}"
+  SRC_DIR="LibO_${VERSION}${VERSION_RC}_Linux_x86-64_helppack-rpm_${LOCALE}"
 else
   PACK_NAME="LibO_${VERSION}_Linux_${ARCH}_helppack-rpm_${LOCALE}"
-  SRC_DIR="LibO_${VERSION_MAJOR}${VERSION_RC}_Linux_${ARCH}_helppack-rpm_${LOCALE}"
+  SRC_DIR="LibO_${VERSION}${VERSION_RC}_Linux_${ARCH}_helppack-rpm_${LOCALE}"
 fi
 
 SRC=$TMP/$SRC_DIR
