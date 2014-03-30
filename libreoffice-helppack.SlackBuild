@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # Slackware build script for LibreOffice Help Packs
-# Copyright (C) 2011 Georgi D. Sotirov <gdsotirov@dir.bg>
+# Copyright (C) 2011-2014 Georgi D. Sotirov <gdsotirov@dir.bg>
 # The source packages are retrieved from ftp://ftp.spnet.net/ooo-bg/
 #
 # This program is free software; you can redistribute it and/or
@@ -20,7 +20,7 @@
 #
 # Visit SlackPack at http://sotirov-bg.net/slackpack/
 #
-# $Id: libreoffice-helppack.SlackBuild,v 1.11 2013/04/14 08:08:31 gsotirov Exp $
+# $Id: libreoffice-helppack.SlackBuild,v 1.12 2014/03/30 17:23:45 gsotirov Exp $
 #
 
 . ../../slack-package.conf
@@ -29,7 +29,7 @@ LIBO_NAME=libreoffice
 NAME=${LIBO_NAME}-helppack
 VERSION_MAJOR=3
 VERSION_MINOR=6
-VERSION_PATCH=6
+VERSION_PATCH=7
 VERSION_RC='2'
 VERSION=$VERSION_MAJOR.$VERSION_MINOR.$VERSION_PATCH
 BUILD=${BUILD:-1}
