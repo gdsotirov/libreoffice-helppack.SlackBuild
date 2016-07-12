@@ -20,7 +20,7 @@
 #
 # Visit SlackPack at http://sotirov-bg.net/slackpack/
 #
-# $Id: libreoffice-helppack.SlackBuild,v 1.28 2016/05/13 19:36:31 gsotirov Exp $
+# $Id: libreoffice-helppack.SlackBuild,v 1.29 2016/07/12 19:33:05 gsotirov Exp $
 #
 
 . ../../slack-package.conf
@@ -28,9 +28,9 @@
 LIBO_NAME=libreoffice
 NAME=${LIBO_NAME}-helppack
 VERSION_MAJOR=5
-VERSION_MINOR=0
-VERSION_PATCH=6
-VERSION_RC=3
+VERSION_MINOR=1
+VERSION_PATCH=4
+VERSION_RC=2
 VERSION=$VERSION_MAJOR.$VERSION_MINOR.$VERSION_PATCH
 BUILD=${BUILD:-1}
 LOCALE=${LOCALE:-'bg'}
@@ -41,7 +41,7 @@ TMP=${TMP:-/tmp}
 ARCH=${ARCH:-i686}
 
 if [ "$ARCH" = "i386" -o "$ARCH" = "i486" -o "$ARCH" = "i686" ]; then
-  ARCH="i686"
+  ARCH="i586"
 fi
 
 function unrpm() {
@@ -62,7 +62,7 @@ fi
 
 # Source pkg format: LibreOffice_4.0.6_Linux_x86_rpm_helppack_bg.tar.gz
 # Source dir format: LibreOffice_4.0.6.2_Linux_x86_rpm_helppack_bg
-if [ "$ARCH" == "i686" ]; then
+if [ "$ARCH" == "i586" ]; then
   PACK_NAME="LibreOffice_${VERSION}_Linux_x86_rpm_helppack_${LOCALE}"
   SRC_DIR="LibreOffice_${VERSION}.${VERSION_RC}_Linux_x86_rpm_helppack_${LOCALE}"
 elif [ "$ARCH" == "x86_64" ]; then
