@@ -20,7 +20,7 @@
 #
 # Visit SlackPack at http://sotirov-bg.net/slackpack/
 #
-# $Id: libreoffice-helppack.SlackBuild,v 1.29 2016/07/12 19:33:05 gsotirov Exp $
+# $Id: libreoffice-helppack.SlackBuild,v 1.30 2016/08/13 14:16:25 gsotirov Exp $
 #
 
 . ../../slack-package.conf
@@ -28,9 +28,9 @@
 LIBO_NAME=libreoffice
 NAME=${LIBO_NAME}-helppack
 VERSION_MAJOR=5
-VERSION_MINOR=1
-VERSION_PATCH=4
-VERSION_RC=2
+VERSION_MINOR=2
+VERSION_PATCH=0
+VERSION_RC=4
 VERSION=$VERSION_MAJOR.$VERSION_MINOR.$VERSION_PATCH
 BUILD=${BUILD:-1}
 LOCALE=${LOCALE:-'bg'}
